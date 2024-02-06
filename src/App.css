@@ -1,0 +1,78 @@
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home {
+  background-color: tomato;
+  padding: 20px 50px 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  padding: 10px;
+}
+/* HELLOCONTENT */
+
+.displayhellos{
+  
+  text-align: center;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.singlehello{
+  width: 370px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: aqua;
+}
+.singlehello p {
+  margin: 0;
+  padding: 5px;
+}
+
+/* WRITEHELLO */
+.writehellos {
+ 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.writehellos p {
+  margin-bottom: 3px;
+  margin-top: 5px;
+}
+.inputhello {
+  height: 100px;
+  width: 300px;
+  border-radius: 5px;
+}
+.inputname {
+  width: 300px;
+  height: 20px;
+  border-radius: 5px;
+}
+.inputbutton {
+  margin-top: 15px
+}
+
+.input-container {
+  width: 370px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: aqua;
+  background-color: beige;
+}
