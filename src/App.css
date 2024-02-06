@@ -4,17 +4,50 @@
   align-items: center;
   justify-content: center;
 }
+/*NAVBAR + LINKS fra CHATGPT*/
+.navbar {
+  
+  padding: 10px 20px; /* adjust padding as needed */
+}
 
+.navlinks {
+  display: flex; /* display links horizontally */
+}
+
+.navlinks a {
+  color: #333; /* default text color */
+  text-decoration: none; /* remove underline */
+  padding: 10px; /* adjust padding as needed */
+  margin-right: 10px; /* add space between links */
+  transition: color 0.3s ease; /* smooth color transition */
+}
+
+.navlinks a:hover {
+  color: #00ff40; /* change text color on hover */
+}
+
+/*HOME*/
 .home {
   background-color: tomato;
-  padding: 20px 50px 20px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+.home h1 {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.content {
+  width: 100%;
+  background-color: thistle;
+  
+ 
+  display: flex;
+  justify-content: center;
+}
 
-.content{
+.gjestebok{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -26,7 +59,6 @@
 .displayhellos{
   
   text-align: center;
-  
   display: flex;
   flex-direction: column;
 }

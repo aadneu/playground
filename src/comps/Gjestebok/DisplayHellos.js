@@ -1,8 +1,8 @@
 import React from 'react'
 
 export const DisplayHellos = ({hellos, deleteHello}) => {
+  let editMode = false
 
-    let editMode = false
 
   return (
     <div className="displayhellos">
