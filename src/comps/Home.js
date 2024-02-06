@@ -8,11 +8,28 @@ import Main from './Main/Main'
 
 const Home = () => {
 
+    const [user, setUser] = useState('')
+    const [pass, setPass] = useState('')
+    const [editMode,setEditMode] = useState(false)
+ 
+    const [loggedIn,setLoggedIn] = useState(false)
+    const LogIn = () => {
+        if(user === 'x' && pass === 'x'){
+            setLoggedIn(prevMode=> !prevMode)
+            setEditMode(true)
+        } else {
+            alert('feil brukernavn/passord')
+        }
+        setUser('')
+        setPass('')    
+        return   
+    }
+   
     const [hellos, setHellos] = useState([
         {
             text:'Halla, så kul hjemmeside du har laget!!',
             name:'Ådne Underhaug',
-            date:'2024-02-05',
+            date:'5/2 - 2024',
         },     
     ])
     
@@ -28,12 +45,20 @@ const Home = () => {
         } else {alert('Denne personen har allerede skrevet i gjesteboka...')}
     }
     
-
   return (
     
         <div className='home'>
             <h1>VELKOMMEN TIL ÅDNES HJEMMESIDE FRA 90-TALLET</h1>
-            <Navbar/>
+            <Navbar 
+            setEditMode={setEditMode}
+            user={user}
+            pass={pass}
+            LogIn={LogIn}
+            setPass={setPass}
+            setUser={setUser}
+            loggedIn= {loggedIn}
+            setLoggedIn={setLoggedIn}
+            />
             <div className='content'>
                 <Routes>
                     <Route path="/" element={<Main/>}/>
@@ -42,6 +67,7 @@ const Home = () => {
                     hellos={hellos}
                     addHello={addHello}
                     deleteHello={deleteHello}
+                    editMode={editMode}
                     />}/>
                  </Routes>
             </div>

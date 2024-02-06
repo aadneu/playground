@@ -1,9 +1,7 @@
 import React from 'react'
 
-export const DisplayHellos = ({hellos, deleteHello}) => {
-  let editMode = false
-
-
+export const DisplayHellos = ({hellos, deleteHello, editMode}) => {
+  
   return (
     <div className="displayhellos">
         {hellos.map((hello) => (

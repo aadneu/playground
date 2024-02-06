@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const AboutMe = () => {
 
     
@@ -8,14 +9,15 @@ const AboutMe = () => {
         name: 'Ådne',
         age: '30 + 5',
         interests: ['mor di','familien min','prate skit', 'kaffi', 'fotball',  'trening','ski/snowboard', 'rocket league', 'heroes of newerth'],
-        skills: ['html', 'javascript', 'react', 'c#',],
+        skills: ['html','css', 'javascript', 'react', 'c#',],
         bilde: './img/aadne.jpg'
     }
 
   return (
     <div className='aboutme'>
         <h2>Overskrift</h2>
-        <div className='aboutmetext'>
+        <div className='aboutmecontent'>
+            <div className='aboutmetext'>
              <ul>
                 <li>Navn: {me.name}</li>
                 <li>Alder: {me.age}</li>
@@ -34,9 +36,12 @@ const AboutMe = () => {
             </ul> 
         </div>
         <div className='aboutmepic'>
-           <img src="./aadne.jpg" alt="" />
+        <img src={require('./aadne.jpg')} style={{width: '300px', height: 'auto'}} />
+                
         </div>
-
+        </div>
+        
+        
     </div>
   )
 }

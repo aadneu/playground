@@ -6,25 +6,78 @@
 }
 /*NAVBAR + LINKS fra CHATGPT*/
 .navbar {
-  
+  display: flex;
   padding: 10px 20px; /* adjust padding as needed */
 }
 
 .navlinks {
   display: flex; /* display links horizontally */
+  align-items: center;
 }
 
-.navlinks a {
-  color: #333; /* default text color */
-  text-decoration: none; /* remove underline */
-  padding: 10px; /* adjust padding as needed */
-  margin-right: 10px; /* add space between links */
-  transition: color 0.3s ease; /* smooth color transition */
+.navlinks a,
+.navlinks button {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+  border: none; /* remove button border */
+  background-color: transparent; /* make button background transparent */
+  cursor: pointer; /* change cursor to pointer on hover */
 }
 
-.navlinks a:hover {
-  color: #00ff40; /* change text color on hover */
+.navlinks a:hover,
+.navlinks button:hover {
+  color: #00ff40;
 }
+.navlinks a:active,
+.navlinks button:active {
+  transform: scale(0.9); /* reduce size of the button when clicked */
+}
+
+.loginFields {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align items to the right */
+}
+
+.loginFields input {
+  padding: 4px; /* Adjust padding as needed */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 5px; /* Add space between input fields */
+}
+
+.loginFields input[type="text"],
+.loginFields input[type="password"] {
+  width: 80px; /* Set width of input fields */
+}
+
+.loginFields input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loginFields input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.smallButton {
+  padding: 4px 8px; /* Adjust padding as needed */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
 
 /*HOME*/
 .home {
@@ -108,3 +161,21 @@
   background-color: aqua;
   background-color: beige;
 }
+/*ABOUT ME*/
+.aboutme{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.aboutmecontent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.aboutmetext{
+  margin-right: 70px;
+  margin-bottom: 20px;
+}
+
+
