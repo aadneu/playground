@@ -7,12 +7,15 @@
 /*NAVBAR + LINKS fra CHATGPT*/
 .navbar {
   display: flex;
+  flex-direction: column;
   padding: 10px 20px; /* adjust padding as needed */
+  align-items: center;
 }
 
 .navlinks {
-  display: flex; /* display links horizontally */
+  display: flex; 
   align-items: center;
+  
 }
 
 .navlinks a,
@@ -34,47 +37,6 @@
 .navlinks a:active,
 .navlinks button:active {
   transform: scale(0.9); /* reduce size of the button when clicked */
-}
-
-.loginFields {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Align items to the right */
-}
-
-.loginFields input {
-  padding: 4px; /* Adjust padding as needed */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-right: 5px; /* Add space between input fields */
-}
-
-.loginFields input[type="text"],
-.loginFields input[type="password"] {
-  width: 80px; /* Set width of input fields */
-}
-
-.loginFields input[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.loginFields input[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-.smallButton {
-  padding: 4px 8px; /* Adjust padding as needed */
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 
