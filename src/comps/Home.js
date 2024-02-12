@@ -11,19 +11,22 @@ import Game2 from './Games/Game2/Game2'
 import Login from './Log in/Login'
 
 
+
 const Home = () => {
 
+    
+    
     const [editMode,setEditMode] = useState(false)
     const [user, setUser] = useState('')
     const [pass, setPass] = useState('')
     const [loggedIn,setLoggedIn] = useState(false)
-    const [hellos, setHellos] = useState([
-        {
-            text:'Halla, så kul hjemmeside du har laget!!',
-            name:'T-man',
-            date:'5/2 - 2024',
-        },     
-    ])
+    // const [hellos, setHellos] = useState([
+    //     {
+    //         text:'Halla, så kul hjemmeside du har laget!!',
+    //         name:'T-man',
+    //         date:'5/2 - 2024',
+    //     },     
+    // ])
 
     const stateProps = {
         editMode,
@@ -34,8 +37,8 @@ const Home = () => {
         setPass,
         loggedIn,
         setLoggedIn,
-        hellos,
-        setHellos,
+        // hellos,
+        // setHellos,
     }
         
   return (
@@ -46,6 +49,7 @@ const Home = () => {
             <div className='content'>
                 <Routes>
                     <Route path="/" element={<Main/>}/>
+                    
                     <Route path="/om" element={<AboutMe/>}/>
                     <Route path="/skriv" element={<Gjestebok
                         {...stateProps} />}/>
@@ -55,7 +59,7 @@ const Home = () => {
                         <Route path="/games/Game2" element={<Game2/>}/> 
                     <Route path="/login" element={<Login
                         {...stateProps}/>}/>
-                    
+                   
                  </Routes>
             </div>
           </div>

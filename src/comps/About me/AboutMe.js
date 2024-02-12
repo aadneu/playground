@@ -36,7 +36,7 @@ const AboutMe = () => {
             </ul> 
         </div>
         <div className='aboutmepic'>
-        <img src={require('./aadne.jpg')} style={{width: '300px', height: 'auto'}} />
+        <img src={require('./aadne.jpg')} style={{width: '300px', height: 'auto'}}  alt=''/>
                 
         </div>
         </div>
