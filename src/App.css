@@ -34,11 +34,14 @@
 .navlinks button:hover {
   color: #00ff40;
 }
-.navlinks a:active,
+
 .navlinks button:active {
   transform: scale(0.9); /* reduce size of the button when clicked */
 }
+.navlinks a:focus{
+  font-weight: bold;
 
+}
 
 
 /*HOME*/

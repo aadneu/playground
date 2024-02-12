@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import Gjestebok from './Gjestebok/Gjestebok'
-import AboutMe from './About me/AboutMe'
+import { Route, Routes } from 'react-router-dom'
 import Navbar from './Navbar'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Main from './Main/Main'
-import Login from './Log in/Login'
+import AboutMe from './About me/AboutMe'
+import Gjestebok from './Gjestebok/Gjestebok'
 import ChuckNorris from './ChuckNorris/ChuckNorris'
 import Games from './Games/Games'
+import Trepaarad from './Games/Trepaarad/Trepaarad'
+import Game2 from './Games/Game2/Game2'
+import Login from './Log in/Login'
 
 
 const Home = () => {
@@ -46,14 +48,14 @@ const Home = () => {
                     <Route path="/" element={<Main/>}/>
                     <Route path="/om" element={<AboutMe/>}/>
                     <Route path="/skriv" element={<Gjestebok
-                       {...stateProps}
-                        />}/>
+                        {...stateProps} />}/>
                     <Route path="/chuck" element={<ChuckNorris/>}/>
-                        
-                            <Route path="/games" element={<Games/>}/>
-                       
+                    <Route path="/games" element={<Games/>}/>
+                        <Route path="/games/trepaarad" element={<Trepaarad/>}/> 
+                        <Route path="/games/Game2" element={<Game2/>}/> 
                     <Route path="/login" element={<Login
                         {...stateProps}/>}/>
+                    
                  </Routes>
             </div>
           </div>

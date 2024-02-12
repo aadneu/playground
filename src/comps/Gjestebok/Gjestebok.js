@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import React from 'react'
 import DisplayHellos from './DisplayHellos'
 import WriteHellos from './WriteHellos'
@@ -7,7 +7,6 @@ import WriteHellos from './WriteHellos'
 
 const Gjestebok = ({editMode, setHellos, hellos}) => {
 
-  
 
 const deleteHello = (deleteThisHello) => {
     const newHellos = hellos.filter(hello => hello !== deleteThisHello)

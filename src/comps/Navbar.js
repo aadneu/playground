@@ -1,22 +1,20 @@
-import React, {useState} from 'react'
-import { Link, useHistory } from 'react-router-dom';
-import Login from './Log in/Login';
+import React from 'react'
+import { NavLink,  } from 'react-router-dom';
+
 
 
 const Navbar = () => {
-
-
   return (
     <nav className="navbar">
+
         <div className="navlinks">
-            <Link to="/">Main</Link>
-            <Link to="/om">Om</Link>
-            <Link to="/skriv">Gjestebok</Link>
-            <Link to="/chuck">Chuck fakta</Link>
-            <Link to="/games">Spill</Link>
-            <Link to="/login">Innloggingsside</Link>
+            <NavLink to="/">Main</NavLink>
+            <NavLink to="/om">Om</NavLink>
+            <NavLink to="/skriv">Gjestebok</NavLink>
+            <NavLink to="/chuck">Chuck fakta</NavLink>
+            <NavLink to="/games">Spill</NavLink>
+            <NavLink to="/login">Innloggingsside</NavLink>
          </div>
-         
     </nav>
   )
 }
