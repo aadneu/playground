@@ -56,10 +56,9 @@
 .content {
   width: 100%;
   background-color: thistle;
-  
- 
   display: flex;
   justify-content: center;
+  height: 100vh;
 }
 
 .gjestebok{
@@ -140,4 +139,22 @@
   margin-bottom: 20px;
 }
 
+/*CHUCK NORRIS*/
 
+.chuckfacts{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+ 
+  max-width: 500px;
+
+}
+.chuckfacts button {
+  padding: 5px;
+  width: fit-content;
+}
+
+.chuckfacts button:hover {
+  background-color: #b36a26;
+}

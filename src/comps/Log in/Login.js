@@ -1,16 +1,13 @@
 import React from 'react'
-import { useState } from 'react'
 
-const Login = ({setEditMode}) => {
 
-  const [user, setUser] = useState('')
-  const [pass, setPass] = useState('')
+const Login = ({ setEditMode, user, setUser, pass, setPass, loggedIn, setLoggedIn }) => {
+
+  
  
-  const [loggedIn,setLoggedIn] = useState(false)
- 
-  const LogIn = () => {
+  const LogInUser = () => {
       if(user === 'x' && pass === 'x'){
-          setLoggedIn(prevMode=> !prevMode)
+          setLoggedIn(true)
           setEditMode(true)
       } else {
           alert('feil brukernavn/passord')
@@ -21,7 +18,7 @@ const Login = ({setEditMode}) => {
   }
 
   const loginButton = () => {
-    LogIn()   
+    LogInUser()   
   }
 
   const logoutButton = () => {
@@ -31,9 +28,7 @@ const Login = ({setEditMode}) => {
 
   return (
     <div>
-        <button onClick={logoutButton}>Logout</button>  
-       
-        <div className='loginFields'>
+        {!loggedIn && (<div className='loginFields'>
             <input 
               onChange={(e) => setUser(e.target.value)}
               value={user}  
@@ -42,8 +37,12 @@ const Login = ({setEditMode}) => {
               onChange={(e) => setPass(e.target.value)}
               value={pass}  
               placeholder='password' type="password" />                
-        </div>
-        <button onClick={loginButton} className="smallButton">Login</button>
+        </div>)
+        }
+        { !loggedIn ?
+        (<button onClick={loginButton} className="smallButton">Logg inn</button>) :
+        (<button onClick={logoutButton}>Logg ut</button> ) 
+        }
 
     </div>
   )

@@ -12,7 +12,9 @@ const Navbar = () => {
             <Link to="/">Main</Link>
             <Link to="/om">Om</Link>
             <Link to="/skriv">Gjestebok</Link>
-            <Link to="/login">Logg inn</Link>
+            <Link to="/chuck">Chuck fakta</Link>
+            <Link to="/games">Spill</Link>
+            <Link to="/login">Innloggingsside</Link>
          </div>
          
     </nav>
