@@ -9,24 +9,12 @@ import Games from './Games/Games'
 import Trepaarad from './Games/Trepaarad/Trepaarad'
 import Game2 from './Games/Game2/Game2'
 import Login from './Log in/Login'
-
-
-
 const Home = () => {
 
-    
-    
     const [editMode,setEditMode] = useState(false)
     const [user, setUser] = useState('')
     const [pass, setPass] = useState('')
     const [loggedIn,setLoggedIn] = useState(false)
-    // const [hellos, setHellos] = useState([
-    //     {
-    //         text:'Halla, så kul hjemmeside du har laget!!',
-    //         name:'T-man',
-    //         date:'5/2 - 2024',
-    //     },     
-    // ])
 
     const stateProps = {
         editMode,
@@ -37,8 +25,7 @@ const Home = () => {
         setPass,
         loggedIn,
         setLoggedIn,
-        // hellos,
-        // setHellos,
+
     }
         
   return (

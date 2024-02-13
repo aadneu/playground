@@ -14,19 +14,27 @@ const WriteHellos = () => {
     const [name, setName] = useState('')
     const date = getdate()
     
-    //     if (text !== '' && name !== '' && date !== ''){
-    //         const hello = { text, name, date}
-    //         addHello(hello) 
-    //     }
-    //     setText('')
-    //     setName('')
-    // }
+
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        const hello = {text, name, date}
-        console.log(hello)
+        const data = {text, name, date}
+        fetch('http://localhost:5000/hellos', {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        }).then(()=> {
+            console.log('data sent')
+            console.log(data)
+            setText('')
+            setName('')
+
+        }).catch(err => {
+            console.error('error sending data', err)
+        })
+        
     }
+
 
   return (
     <div className='writehellos'>

@@ -161,3 +161,23 @@
 .chuckfacts button:hover {
   background-color: #b36a26;
 }
+
+/*GAMES*/
+.games{
+  text-align: center;
+}
+.gamegrid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  
+}
+.griditem{
+  text-align: center;
+  border: 1px solid black;
+  height: 100px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+  

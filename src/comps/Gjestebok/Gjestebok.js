@@ -1,17 +1,23 @@
-
-
-
 import DisplayHellos from './DisplayHellos'
 import WriteHellos from './WriteHellos'
 import useFetch from '../useFetch'
 
-
-
 const Gjestebok = ({editMode}) => {
 
-  const {backendData: hellosApi, isPending} = useFetch("/api")
+  const {backendData: hellosApi, isPending} = useFetch("http://localhost:5000/hellos")
 
+  
 
+  return (
+    <div className="gjestebok">
+          {isPending && <div>Loading...</div> }
+          {hellosApi && <DisplayHellos hellosApi={hellosApi} editMode={editMode}/>}
+          <WriteHellos />
+    </div>
+  )
+}
+
+export default Gjestebok
 
 // const deleteHello = (deleteThisHello) => {
 //     const newHellos = hellos.filter(hello => hello !== deleteThisHello)
@@ -24,15 +30,3 @@ const Gjestebok = ({editMode}) => {
 //         setHellos((oldHellos) => [...oldHellos, addThisHello])
 //     } else {alert('Denne personen har allerede skrevet i gjesteboka...')}
 // }
-
-
-  return (
-    <div className="gjestebok">
-          {isPending && <div>Loading...</div> }
-          {hellosApi && <DisplayHellos hellosApi={hellosApi} editMode={editMode}/>}
-          <WriteHellos />
-    </div>
-  )
-}
-
-export default Gjestebok
