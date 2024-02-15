@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 const WriteHellos = () => {
 
     const getdate = () => {
@@ -13,7 +14,7 @@ const WriteHellos = () => {
     const [text, setText] = useState('')
     const [name, setName] = useState('')
     const date = getdate()
-    
+   
 
     
     const handleSubmit = (e) => {

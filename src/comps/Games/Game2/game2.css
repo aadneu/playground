@@ -1,0 +1,19 @@
+.game2grid{
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    /* grid-auto-rows: auto; */
+
+}
+
+.gridobject{
+    
+    border: 1px solid black;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    aspect-ratio: 1/1;
+}
+.game2buttons {
+    margin: 0;
+    padding: 0;
+}

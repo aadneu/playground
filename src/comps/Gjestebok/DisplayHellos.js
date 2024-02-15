@@ -1,22 +1,34 @@
 import React from 'react'
 
+
+
 const DisplayHellos = ({hellosApi,  editMode}) => {
   
-  const sortedHellos = [...hellosApi.hellos].sort((a, b) => {
-    return new Date(b.date) - new Date(a.date);
-  });
+  const sortedHellos = [...hellosApi.hellos]
+  const reversedHellos = sortedHellos.reverse(); 
+
+  const deleteHello = (id) => {
+    
+    fetch('http://localhost:5000/hellos/' + id, {
+        method: 'DELETE',
+        headers: {"Content-Type": "application/json"},
+      }).then(() => {
+       console.log('deleted')
+       
+    })
+}
 
 
   return (
 
     <div className='displayhellos'>{
-      sortedHellos.map((hello) => (
+      reversedHellos.map((hello) => (
             <div className="singlehello" key={hello._id}>
                 <p>"{hello.text}"</p>
                 <p>{hello.name}</p>
                 <p>{hello.date}</p>
-                {editMode && <button>Slett</button>}
-                {/* {editMode && <button onClick={() => deleteHello(hello)}>Slett</button>} */}
+               
+                {editMode && <button onClick={() => deleteHello(hello._id)}>Slett</button>}
             </div>
           ))}
     </div>
