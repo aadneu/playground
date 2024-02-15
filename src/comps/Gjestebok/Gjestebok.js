@@ -6,9 +6,7 @@ const Gjestebok = ({editMode}) => {
 
   const {backendData: hellosApi, isPending} = useFetch("http://localhost:5000/hellos")
 
-  
-
-  return (
+    return (
     <div className="gjestebok">
           {isPending && <div>Loading...</div> }
           {hellosApi && <DisplayHellos hellosApi={hellosApi} editMode={editMode}/>}

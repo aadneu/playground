@@ -2,12 +2,17 @@ import React from 'react'
 
 const DisplayHellos = ({hellosApi,  editMode}) => {
   
+  const sortedHellos = [...hellosApi.hellos].sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+
+
   return (
 
     <div className='displayhellos'>{
-      hellosApi.hellos.map((hello) => (
-            <div className="singlehello" key={hello.name}>
-                <p>{hello.text}</p>
+      sortedHellos.map((hello) => (
+            <div className="singlehello" key={hello._id}>
+                <p>"{hello.text}"</p>
                 <p>{hello.name}</p>
                 <p>{hello.date}</p>
                 {editMode && <button>Slett</button>}
