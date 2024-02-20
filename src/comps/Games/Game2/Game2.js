@@ -3,11 +3,14 @@ import {useState, useEffect} from 'react'
 
 const Game2 = () => {
 
+  
   const [array, setArray] = useState([])
+  const [aliveSnake, setAliveSnake] = useState(true)
+  // const [direction, setDirection] = useState(() => movePlayerDown)
   const snake = "\u{1F40D}"
   const food = "\u{1F34E}"
-
-  const createGrid = (numOfObjects) => {
+  
+    const createGrid = (numOfObjects) => {
     const gridArray = []
     for (let i = 0; i < numOfObjects; i++){
       gridArray.push({
@@ -18,19 +21,29 @@ const Game2 = () => {
     return gridArray
   }
   
+    const findSnake = () => {
+    const Arr = [...array]
+    const snakeIndex = Arr.findIndex(cell => cell.content === snake)
+    return snakeIndex
+  }
   useEffect(() => {
     const initialGrid = (createGrid(225))
     initialGrid[ Math.floor(Math.random() * 226)].content = snake
     initialGrid[ Math.floor(Math.random() * 226)].content = food
     setArray(initialGrid)
+   
   }, []);
 
-  const findSnake = () => {
-    const Arr = [...array]
-    const snakeIndex = Arr.findIndex(cell => cell.content === snake)
-    return snakeIndex
-  }
-
+  // const dynamicMovement = () => {
+  //   const intervalId = setInterval(() => {
+  //     if (aliveSnake) {
+  //       movePlayerDown()
+  //     } else {
+  //       clearInterval(intervalId); // Stop the interval if snake is not alive
+  //     }
+  //   }, 1000); // 1000 milliseconds = 1 second
+  // }
+  
   const movePlayerDown = () => {
     let index = findSnake()
     const Arr = [...array]
@@ -86,11 +99,15 @@ const Game2 = () => {
         <button onClick={movePlayerLeft}>left</button>
         <button onClick={movePlayerRight}>right</button><br />
         <button onClick={movePlayerDown}>down</button>
+        {/* <button onClick={setDirection(movePlayerUp)}>up</button><br />
+        <button onClick={setDirection(movePlayerLeft)}>left</button>
+        <button onClick={setDirection(movePlayerRight)}>right</button><br />
+        <button onClick={setDirection(movePlayerDown)}>down</button> */}
       </div>
       
       <div className='game2grid'>
-        {array.map((obj, id) => (
-          <div className='gridobject' key={obj.id}>{obj.content}</div>
+        {array.map((cell, id) => (
+          <div className='game2cell' key={cell.id}>{cell.content}</div>
         ))}
         
       </div>

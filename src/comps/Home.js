@@ -9,6 +9,7 @@ import Games from './Games/Games'
 import Trepaarad from './Games/Trepaarad/Trepaarad'
 import Game2 from './Games/Game2/Game2'
 import Login from './Log in/Login'
+import Snake from './Games/Snake/Snake'
 const Home = () => {
 
     const [editMode,setEditMode] = useState(false)
@@ -44,6 +45,7 @@ const Home = () => {
                     <Route path="/games" element={<Games/>}/>
                         <Route path="/games/trepaarad" element={<Trepaarad/>}/> 
                         <Route path="/games/Game2" element={<Game2/>}/> 
+                        <Route path="/games/Snake" element={<Snake/>}/> 
                     <Route path="/login" element={<Login
                         {...stateProps}/>}/>
                    
