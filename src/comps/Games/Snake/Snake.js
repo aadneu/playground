@@ -2,14 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 const Snake = () => {
     
-/*
-SNAKE TODO:
-- FUNGERENDE PILTASTER
-- FUNGERENDE PAUSEKNAPP
-- SHINE OPP SPILLEBRETTET
-- LAGE EN GAME OVER MELDING
-
-*/ 
 
     const [isPlaying, setIsPlaying] = useState(true)
     const [grid, setGrid] = useState([])
@@ -17,9 +9,13 @@ SNAKE TODO:
     const [direction, setDirection] = useState('')
     const [tummyContent, setTummyContent] = useState([])
     const [delay, setDelay] = useState(0)  
+    const [sessionScore, setSessionScore] = useState([])
+    const [gameOver, setGameOver] = useState('')
+
     const snake = "\u{1F40D}"
     const food = "\u{1F34E}"
     const tail = '🟢'
+    const gamespeed = 100
     
     const size = 20; // størrelse på grid, endrer også move funksjoner til å stemme
     const randnumb = () => {return Math.floor(Math.random() * size)} 
@@ -46,12 +42,17 @@ SNAKE TODO:
         }
         return gridArray
     }
-    useEffect(() => {
+
+    const initializeGame = () => {
         let initialGrid = (createGrid())
         initialGrid[randnumb()][randnumb()].content = snake
         initialGrid[randnumb()][randnumb()].content = food
         setGrid(initialGrid)
+    }
+    useEffect(() => {
+        initializeGame();
     }, []);
+
 
     // FUNKSJON FOR Å LOKALISERE .CONTENT I GRID
     const findElement = (element) => {
@@ -68,16 +69,21 @@ SNAKE TODO:
 
     //TESTKNAPP FOR EVENTUELLE NYE FUNKSJONER
     const testFunction = () => {
-        setIsPlaying(prevIsPlaying => !prevIsPlaying);
-        console.log(isPlaying)
-    }
+        let score = tummyContent.length
+        setSessionScore(prevSessionScore => [...prevSessionScore, score])
+        console.log(sessionScore)
+        handleClick('')
+        setTummyContent([])
+        setDelay(0)
+        initializeGame();
+        }
 
-    //OPPDATER MAGEINNHOLD OG GENERER NY MAT
+    //OPPDATER MAGEINNHOLD OG GENERER NY MAT, OG SETTE DELAY PÅ REMOVE CELLE-CONTENT
     const eatFood = () => {
         let foodIndex = findElement(food)
         if(!foodIndex) {
             setTummyContent(prevTummyContent => [...prevTummyContent, food])
-            setDelay(delay + 90)
+            setDelay(delay + gamespeed)
             generateFood();
         }
     }
@@ -97,17 +103,19 @@ SNAKE TODO:
   
      // ALT NEDENFOR HER HAR MED BEVEGELSE AV SLANGEN Å GJØRE
      // STARTGAME TAR INN EN RETNING SOM PARAMETER OG KJØRES I HANDLECLICK-FUNKSJONEN
+  
+
     const handleClick = (direction) => {
-        
         startGame(() => moveSnake(direction));
     }
 
     const startGame = (moveFunction) => {
+       
         clearInterval(intervalId)
         let id = setInterval(() => {
              moveFunction()
              eatFood();
-         }, 100)
+         }, gamespeed)
          setIntervalId(id)  
         
     }
@@ -115,6 +123,12 @@ SNAKE TODO:
     const moveSnake = (direction) => {
         const snakePos = findElement(snake);
         const newGrid = [...grid];
+        
+        if (snakePos === null) {
+            // setGameOver('Game Over: Error');
+            clearInterval(intervalId)
+            return;
+        }
         
         let newRow, newCol;
         if (direction === 'up') {
@@ -135,22 +149,20 @@ SNAKE TODO:
         }
         
         grid[snakePos.col][snakePos.row].removeContent(delay);
-        grid[snakePos.col][snakePos.row].content = tail;
+        grid[snakePos.col][snakePos.row].content = tail;   
         
-        //sjekk denne
-        if (newGrid[newCol][newRow].content !== tail){
-             newGrid[newCol][newRow].content = snake;
-        } else {
-            setTummyContent('GAME OVER')
-            return;
+        if(newGrid[newCol][newRow].content === tail){
+            // setGameOver('Game Over: cant eat tail...')
+            
+            clearInterval(intervalId)
+            return
         }
-       
+        newGrid[newCol][newRow].content = snake;
+     
         setDirection(direction);
         setGrid(newGrid);
     }
 
-
-    
     const showButtons = () => {
         return (
             <div>
@@ -161,13 +173,27 @@ SNAKE TODO:
             </div>
         )
     }
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'ArrowDown'){
+            event.preventDefault();
+            handleClick('down')
+        } else if (event.key === 'ArrowUp'){
+            event.preventDefault();
+            handleClick('up')
+        } else if (event.key === 'ArrowLeft'){
+            handleClick('left')
+        } else if (event.key === 'ArrowRight'){
+            handleClick('right')
+        }
+    }
     
-    
+    const sortedScores = sessionScore.slice().sort((a, b) => b - a);
 
   return (
-    <div className='games'>
-        <h1>Snake</h1>
-        <button onClick={testFunction}>PAUSE</button> <br />
+    <div className='games' tabIndex="0" onKeyDown={handleKeyDown}>
+        <h1>Worm</h1>
+        <button onClick={testFunction}>RESET</button> <br />
        {showButtons()}
      
         <div className='grid'>
@@ -182,7 +208,14 @@ SNAKE TODO:
             ))}
         </div>
         <h3>Apples eaten: {tummyContent.length}</h3>
-        
+        Session score: 
+        <div>
+            <ul>
+                {sortedScores.map((score, index) => (
+                    <li key={index}>{score}</li>
+                ))}
+            </ul>         
+        </div>               
     </div>
   )
 }

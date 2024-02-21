@@ -9,7 +9,7 @@ const Games = () => {
          <div className="navlinks">
           <Link to="/games/trepaarad">3 på rad</Link>
           {/* <Link to="/games/Game2">Game 2</Link> */}
-          <Link to="/games/Snake">Snake</Link>
+          <Link to="/games/Snake">Worm</Link>
          </div>
          <div className='gamescontent'>
        
