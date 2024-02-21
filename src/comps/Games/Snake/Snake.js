@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react'
 const Snake = () => {
     
 
-    const [isPlaying, setIsPlaying] = useState(true)
+
     const [grid, setGrid] = useState([])
     const [intervalId, setIntervalId] = useState('');
     const [direction, setDirection] = useState('')
     const [tummyContent, setTummyContent] = useState([])
     const [delay, setDelay] = useState(0)  
     const [sessionScore, setSessionScore] = useState([])
-    const [gameOver, setGameOver] = useState('')
+  
 
     const snake = "\u{1F40D}"
     const food = "\u{1F34E}"
@@ -70,8 +70,10 @@ const Snake = () => {
     //TESTKNAPP FOR EVENTUELLE NYE FUNKSJONER
     const testFunction = () => {
         let score = tummyContent.length
-        setSessionScore(prevSessionScore => [...prevSessionScore, score])
-        console.log(sessionScore)
+        if (score > 5){
+            setSessionScore(prevSessionScore => [...prevSessionScore, score])
+        }
+        
         handleClick('')
         setTummyContent([])
         setDelay(0)
