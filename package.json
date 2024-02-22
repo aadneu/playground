@@ -1,7 +1,7 @@
 {
   "name": "playground",
   "version": "0.1.0",
-  "homepage": "https://underhill.no",
+  "homepage": "https://aadneu.github.io/playground/",
   "proxy": "http://localhost:5000",
   "private": true,
   "dependencies": {
