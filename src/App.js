@@ -9,9 +9,10 @@ function App() {
   return (
 
     <div className="App">
-      <Router>
+      {/* <Router>
         <Home/> 
-      </Router>
+      </Router> */}
+      <h1>HomePAGE</h1>
     </div>
 
 
