@@ -7,7 +7,7 @@ import Gjestebok from './Gjestebok/Gjestebok'
 import ChuckNorris from './ChuckNorris/ChuckNorris'
 import Games from './Games/Games'
 import Trepaarad from './Games/Trepaarad/Trepaarad'
-import Game2 from './Games/Game2/Game2'
+
 import Login from './Log in/Login'
 import Snake from './Games/Snake/Snake'
 const Home = () => {
@@ -31,27 +31,24 @@ const Home = () => {
         
   return (
     
-        <div className='home'>
-            <h1>VELKOMMEN TIL ÅDNES HJEMMESIDE FRA 90-TALLET</h1>
+        <div>
+            {/* <h1>VELKOMMEN TIL ÅDNES HJEMMESIDE FRA 90-TALLET</h1> */}
             <Navbar setEditMode={setEditMode}/>
-            <div className='content'>
+            <div className='col-lg-8 mx-auto'>
                 <Routes>
                     <Route path="/" element={<Main/>}/>
-                    
                     <Route path="/om" element={<AboutMe/>}/>
                     <Route path="/skriv" element={<Gjestebok
                         {...stateProps} />}/>
                     <Route path="/chuck" element={<ChuckNorris/>}/>
                     <Route path="/games" element={<Games/>}/>
                         <Route path="/games/trepaarad" element={<Trepaarad/>}/> 
-                        <Route path="/games/Game2" element={<Game2/>}/> 
                         <Route path="/games/Snake" element={<Snake/>}/> 
                     <Route path="/login" element={<Login
                         {...stateProps}/>}/>
-                   
                  </Routes>
             </div>
-          </div>
+        </div>
    
     
   )

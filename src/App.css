@@ -1,14 +1,14 @@
-.App{
+/* .App{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-/*NAVBAR + LINKS fra CHATGPT*/
+
 .navbar {
   display: flex;
   flex-direction: column;
-  padding: 10px 20px; /* adjust padding as needed */
+  padding: 10px 20px; 
   align-items: center;
 }
 
@@ -25,9 +25,9 @@
   padding: 10px;
   margin-right: 10px;
   transition: color 0.3s ease;
-  border: none; /* remove button border */
-  background-color: transparent; /* make button background transparent */
-  cursor: pointer; /* change cursor to pointer on hover */
+  border: none; 
+  background-color: transparent; 
+  cursor: pointer; 
 }
 
 .navlinks a:hover,
@@ -36,7 +36,7 @@
 }
 
 .navlinks button:active {
-  transform: scale(0.9); /* reduce size of the button when clicked */
+  transform: scale(0.9); 
 }
 .navlinks a:focus{
   font-weight: bold;
@@ -44,7 +44,7 @@
 }
 
 
-/*HOME*/
+
 .home {
   background-color: blueviolet;
   width: 100%;
@@ -72,7 +72,7 @@
   
   padding: 10px;
 }
-/* HELLOCONTENT */
+
 
 .displayhellos{
   
@@ -93,7 +93,7 @@
   padding: 5px;
 }
 
-/* WRITEHELLO */
+
 .writehellos {
  
   text-align: center;
@@ -126,7 +126,7 @@
   background-color: aqua;
   background-color: beige;
 }
-/*ABOUT ME*/
+
 .aboutme{
   display: flex;
   flex-direction: column;
@@ -143,7 +143,7 @@
   margin-bottom: 20px;
 }
 
-/*CHUCK NORRIS*/
+
 
 .chuckfacts{
   display: flex;
@@ -163,22 +163,6 @@
   background-color: #b36a26;
 }
 
-/*GAMES*/
-.games{
-  text-align: center;
-}
-.gamegrid {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  
-}
-.griditem{
-  text-align: center;
-  border: 1px solid black;
-  height: 100px;
-  aspect-ratio: 1/1;
-  cursor: pointer;
-}
-  
+
+
+   */

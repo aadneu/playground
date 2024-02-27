@@ -15,7 +15,7 @@ const AboutMe = () => {
 
   return (
     <div className='aboutme'>
-        <h2>Overskrift</h2>
+        <h2>Hvem er jeg?</h2>
         <div className='aboutmecontent'>
             <div className='aboutmetext'>
              <ul>

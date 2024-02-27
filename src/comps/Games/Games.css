@@ -8,8 +8,6 @@
     padding-bottom: 6px;
     padding-right: 6px;
     padding-top: 0px;
-    
-
 }
 
 .cell{
@@ -24,3 +22,22 @@
     margin: 0;
     padding: 0;
 }
+
+/* 3 på rad */
+.games{
+    text-align: center;
+  }
+  .gamegrid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    
+  }
+  .griditem{
+    text-align: center;
+    border: 1px solid black;
+    height: 100px;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+  }
