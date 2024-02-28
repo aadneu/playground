@@ -34,7 +34,7 @@ const Home = () => {
         <div>
             {/* <h1>VELKOMMEN TIL ÅDNES HJEMMESIDE FRA 90-TALLET</h1> */}
             <Navbar setEditMode={setEditMode}/>
-            <div className='col-lg-8 mx-auto'>
+            <div className='content'>
                 <Routes>
                     <Route path="/" element={<Main/>}/>
                     <Route path="/om" element={<AboutMe/>}/>

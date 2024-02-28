@@ -10,7 +10,7 @@ import Home from './comps/Home'
 function App() {
   return (
 
-  <div className="container-fluid text-center mg-0">
+  <div>
        <Home/> 
   </div>
 
