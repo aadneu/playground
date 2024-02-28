@@ -5,44 +5,42 @@ const AboutMe = () => {
 
     
 
-    const me = {
-        name: 'Ådne',
-        age: '30 + 5',
-        interests: ['mor di','familien min','prate skit', 'kaffi', 'fotball',  'trening','ski/snowboard', 'rocket league', 'heroes of newerth'],
-        skills: ['html','css', 'javascript', 'react', 'c#',],
-        bilde: './img/aadne.jpg'
-    }
+    
 
   return (
-    <div className='aboutme'>
-        <h2>Hvem er jeg?</h2>
-        <div className='aboutmecontent'>
-            <div className='aboutmetext'>
-             <ul>
-                <li>Navn: {me.name}</li>
-                <li>Alder: {me.age}</li>
-                <li>Interesser inkluderer: {me.interests.map((interest,index) => (
-                    <ul key={index}>
-                        <li>
-                            {interest}
-                        </li>
-                    </ul>
-                ))}</li>
-                <li>Ferdigheter: {me.skills.map((skill, index)=> (
-                    <ul className='listskill' key={index}>
-                    <li>{skill} </li> 
-                    </ul>
-                ))}</li>
-            </ul> 
+    <section id="om">
+        <div className='text-center'> 
+            <h2>HVEM ER JEG?</h2>
         </div>
-        <div className='aboutmepic'>
-        <img src={require('./aadne.jpg')} style={{width: '300px', height: 'auto'}}  alt=''/>
+
+     <div className='container-lg'>
+       
+       <div className="row my-5">
+            <div className='col-6'>
+                <img src={require('./aadne.jpg')} className='img-fluid'  alt=''/>      
+            </div>
+
+            <div className='col '>
+                <p>
+                    Jeg heter Ådne, og jeg er for tiden 35 år gammel. 
+                    Blant mine interesser er familien min, uformelle samtaler om livet, nyte en god kopp sort gull, lage vafler, lytte til musikk.
+                 <p>
                 
-        </div>
+                </p>   
+                    Jeg liker å holde meg i form gjennom regelmessige treningsøkter, tidligere var det fotball, nå er det helst styrketrening eller kampsport. Om vinteren liker jeg både langrenn og alpint. 
+                    I tillegg til disse hobbyene, liker jeg også å spille spill, spesielt Rocket League og Heroes of Newerth.
+                </p>
+                <p>
+                    Når det gjelder mine ferdigheter, behersker jeg HTML, CSS, Bootstrap, JavaScript og React, noe som gjør meg godt kjent med front-end webutviklingsteknologier. 
+                    I tillegg har jeg noe erfaring med C#. Disse ferdighetene gjør at jeg kan bidra til webutviklingsprosjekter og oppgaver innen programvareutvikling.
+                </p>
+
+            </div>
         </div>
         
         
-    </div>
+     </div>
+    </section>
   )
 }
 

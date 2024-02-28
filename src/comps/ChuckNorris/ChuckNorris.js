@@ -23,11 +23,18 @@ const ChuckNorris = () => {
     };
 
     return (
-        <div className='chuckfacts'>
-            <button onClick={handleNewJokeClick}>Lag ny</button>
-            <h3>Chuck Norris vits:</h3>
-            <p>{ chuckFact }</p>
+        <section id="chuck">
+
+        <div className='container-lg'>
+            <div className="text-center"> 
+                <h3>Chuck Norris vits:</h3>
+                <p>{ chuckFact }</p>
+                <button onClick={handleNewJokeClick} type="button" class="btn btn-success btn-sm my-1">Lag ny</button>       
+
+            </div>
+            
         </div>
+        </section>
     );
 }
 
