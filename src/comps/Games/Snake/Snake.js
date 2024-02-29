@@ -195,22 +195,22 @@ const Snake = () => {
   return (
     <div className='container-lg '>
 
-        <div className='row text-center'>
+        <div className='row text-center justify-content-center'>
                     <h1>Worm</h1>
                     <div>
-                        <button onClick={testFunction} class="btn btn-success btn-sm my-1">RESET</button> <br />
+                        <button onClick={testFunction} className="btn btn-success btn-sm my-1">RESET</button> <br />
                     </div>
                     
                     {showButtons()}
             
-            <div className='col d-flex justify-content-center'>
+            <div className='col-12 col-md-8 d-flex justify-content-center'>
           
         
-                <div className='games' >
+                {/* <div className='games' > */}
 
                     <div className='grid' tabIndex="0" onKeyDown={handleKeyDown}>
                         {grid.map((row, rowIndex) => (
-                            <div key={rowIndex} className="row">
+                            <div key={rowIndex} className="rad">
                                 {row.map((cell) => (
                                     <div className='cell' key={cell.id}>
                                         {cell.content} 
@@ -219,6 +219,9 @@ const Snake = () => {
                             </div>
                         ))}
                     </div>
+                    <br/>
+                {/* </div> */}
+            </div>
                     <h3>Apples eaten: {tummyContent.length}</h3>
                     Session score: 
                     <div>
@@ -228,8 +231,6 @@ const Snake = () => {
                             ))}
                         </ul>         
                     </div>               
-                </div>
-            </div>
         </div>
     </div>
   )
