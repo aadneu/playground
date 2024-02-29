@@ -15,7 +15,7 @@ if(process.env.NODE_ENV !== 'production'){
     require('dotenv').config();
 }
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 5000
 const CONNECTION = process.env.CONNECTION
 
 app.get("/hellos/:id", async(req,res) => {
@@ -61,7 +61,7 @@ app.post("/hellos", (req, res) => {
    const hello = new Hello(req.body)
    try {
        hello.save()
-       res.status(201).json({customer});
+       res.status(201).json({hello});
    } catch(err){
         res.status(400).json({error: err.message})
    }

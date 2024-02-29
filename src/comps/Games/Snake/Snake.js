@@ -193,31 +193,44 @@ const Snake = () => {
     const sortedScores = sessionScore.slice().sort((a, b) => b - a);
 
   return (
-    <div className='games' tabIndex="0" onKeyDown={handleKeyDown}>
-        <h1>Worm</h1>
-        <button onClick={testFunction}>RESET</button> <br />
-       {showButtons()}
-     
-        <div className='grid'>
-            {grid.map((row, rowIndex) => (
-                <div key={rowIndex} className="row">
-                    {row.map((cell) => (
-                        <div className='cell' key={cell.id}>
-                            {cell.content} 
-                        </div>
-                    ))}
+    <div className='container-lg '>
+
+        <div className='row text-center'>
+                    <h1>Worm</h1>
+                    <div>
+                        <button onClick={testFunction} class="btn btn-success btn-sm my-1">RESET</button> <br />
+                    </div>
+                    
+                    {showButtons()}
+            
+            <div className='col d-flex justify-content-center'>
+          
+        
+                <div className='games' >
+
+                    <div className='grid' tabIndex="0" onKeyDown={handleKeyDown}>
+                        {grid.map((row, rowIndex) => (
+                            <div key={rowIndex} className="row">
+                                {row.map((cell) => (
+                                    <div className='cell' key={cell.id}>
+                                        {cell.content} 
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                    <h3>Apples eaten: {tummyContent.length}</h3>
+                    Session score: 
+                    <div>
+                        <ul>
+                            {sortedScores.map((score, index) => (
+                                <li key={index}>{score}</li>
+                            ))}
+                        </ul>         
+                    </div>               
                 </div>
-            ))}
+            </div>
         </div>
-        <h3>Apples eaten: {tummyContent.length}</h3>
-        Session score: 
-        <div>
-            <ul>
-                {sortedScores.map((score, index) => (
-                    <li key={index}>{score}</li>
-                ))}
-            </ul>         
-        </div>               
     </div>
   )
 }
