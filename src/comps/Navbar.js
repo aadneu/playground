@@ -17,7 +17,7 @@ const Navbar = () => {
             <NavLink className="nav-link active" aria-current="page" to="/">Hjem</NavLink> 
             
             <NavLink className="nav-link" to="/om">Om</NavLink> 
-            {/* <NavLink className="nav-link" to="/skriv">Gjestebok</NavLink> */}
+            <NavLink className="nav-link" to="/skriv">Gjestebok</NavLink>
             <NavLink className="nav-link" to="/chuck">Chuck</NavLink>
 
             {/* <NavLink className="nav-link" to="/games">Spill</NavLink> */}
