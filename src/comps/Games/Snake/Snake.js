@@ -222,15 +222,16 @@ const Snake = () => {
                     <br/>
                 {/* </div> */}
             </div>
-                    <h3>Apples eaten: {tummyContent.length}</h3>
-                    Session score: 
-                    <div>
-                        <ul>
-                            {sortedScores.map((score, index) => (
-                                <li key={index}>{score}</li>
-                            ))}
-                        </ul>         
-                    </div>               
+
+            <h3>Apples eaten: {tummyContent.length}</h3>
+            Session score: 
+            <div>
+                <ul>
+                    {sortedScores.map((score, index) => (
+                        <li key={index}>{score}</li>
+                    ))}
+                </ul>         
+            </div>               
         </div>
     </div>
   )

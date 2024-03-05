@@ -26,10 +26,7 @@
     overflow: hidden;
     
 }
-.game2buttons {
-    margin: 0;
-    padding: 0;
-}
+/*  */
 
 /* 3 på rad */
 
@@ -43,7 +40,8 @@
   .griditem{
     text-align: center;
     border: 1px solid black;
-    height: 100px;
+    /* height: 100px; */
+    width: 100%;
     aspect-ratio: 1/1;
     cursor: pointer;
   }

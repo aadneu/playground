@@ -7,7 +7,7 @@ import Gjestebok from './Gjestebok/Gjestebok'
 import ChuckNorris from './ChuckNorris/ChuckNorris'
 import Games from './Games/Games'
 import Trepaarad from './Games/Trepaarad/Trepaarad'
-
+import Testside from './Testside/Testside'
 import Login from './Log in/Login'
 import Snake from './Games/Snake/Snake'
 const Home = () => {
@@ -37,10 +37,12 @@ const Home = () => {
             <div className='content'>
                 <Routes>
                     <Route path="/" element={<Main/>}/>
-                    <Route path="/om" element={<AboutMe/>}/>
+                    {/* <Route path="/om" element={<AboutMe/>}/> */}
                     <Route path="/skriv" element={<Gjestebok
                         {...stateProps} />}/>
                     <Route path="/chuck" element={<ChuckNorris/>}/>
+                    <Route path="/test" element={<Testside/>}/>
+                    
                     <Route path="/games" element={<Games/>}/>
                         <Route path="/games/trepaarad" element={<Trepaarad/>}/> 
                         <Route path="/games/Snake" element={<Snake/>}/> 

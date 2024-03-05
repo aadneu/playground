@@ -16,12 +16,13 @@ const Navbar = () => {
           <div className="navbar-nav ">
             <NavLink className="nav-link active" aria-current="page" to="/">Hjem</NavLink> 
             
-            <NavLink className="nav-link" to="/om">Om</NavLink> 
+            {/* <NavLink className="nav-link" to="/om">Om</NavLink>  */}
             <NavLink className="nav-link" to="/skriv">Gjestebok</NavLink>
             <NavLink className="nav-link" to="/chuck">Chuck</NavLink>
+            <NavLink className="nav-link" to="/test">Test</NavLink>
 
             {/* <NavLink className="nav-link" to="/games">Spill</NavLink> */}
-            <NavLink className="nav-link" to="/login">Innloggingsside</NavLink>
+            {/* <NavLink className="nav-link" to="/login">Logg inn</NavLink> */}
             <li class="nav-item dropdown">
               <div class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Spill

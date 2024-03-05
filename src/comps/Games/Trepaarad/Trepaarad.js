@@ -80,18 +80,27 @@ const Trepaarad = () => {
   }
 
   return (
-    <div className='games'>
-      <h1>3 på rad</h1>
-      <div className='gamegrid'>
-        {grid.map((window, id) => (
-          <div 
-            style={{backgroundColor: window.color}} 
-            onClick={() => handleClick(window)} 
-            className='griditem' key={id}>
-          </div>
-        ))}
+    <div className='container lg text-center'>
+
+      
+        <h1>3 på rad</h1>
+      
+      <div className="row justify-content-center">
+          <div className="col d-flex justify-content-center">
+
+            <div className='gamegrid'>
+              {grid.map((window, id) => (
+              <div 
+                style={{backgroundColor: window.color}} 
+                onClick={() => handleClick(window)} 
+                className='griditem' key={id}></div>))}
+              </div>
+            </div>
+
+
       </div>
-      <h1>{winner}</h1>
+        
+        <h1>{winner}</h1>
     </div>
   )
 }
