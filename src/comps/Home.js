@@ -10,6 +10,7 @@ import Trepaarad from './Games/Trepaarad/Trepaarad'
 import Testside from './Testside/Testside'
 import Login from './Log in/Login'
 import Snake from './Games/Snake/Snake'
+import Guestbook from './Guestbook/Guestbook'
 const Home = () => {
 
     const [editMode,setEditMode] = useState(false)
@@ -32,15 +33,16 @@ const Home = () => {
   return (
     
         <div>
-            {/* <h1>VELKOMMEN TIL ÅDNES HJEMMESIDE FRA 90-TALLET</h1> */}
+           
             <Navbar setEditMode={setEditMode}/>
             <div className='content'>
                 <Routes>
                     <Route path="/" element={<Main/>}/>
                     {/* <Route path="/om" element={<AboutMe/>}/> */}
-                    <Route path="/skriv" element={<Gjestebok
-                        {...stateProps} />}/>
+                    {/* <Route path="/skriv" element={<Gjestebok
+                        {...stateProps} />}/> */}
                     <Route path="/chuck" element={<ChuckNorris/>}/>
+                    <Route path="/guestbook" element={<Guestbook/>}/>
                     <Route path="/test" element={<Testside/>}/>
                     
                     <Route path="/games" element={<Games/>}/>

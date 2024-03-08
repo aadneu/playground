@@ -15,12 +15,12 @@ const AboutMe = () => {
 
      <div className='container-lg'>
        
-       <div className="row my-5">
-            <div className='col-6'>
+       <div className="row my-5 justify-content-center">
+
+            <div className='col-11 col-md-6 col-lg-5 order-2 order-md-1'>
                 <img src={require('./aadne.jpg')} className='img-fluid'  alt=''/>      
             </div>
-
-            <div className='col '>
+            <div className='col-11 col-md-6 col-lg-5 order-1 order-md-2'>
                 <p>
                     Jeg heter Ådne, og jeg er for tiden 35 år gammel. 
                     Blant mine interesser er familien min, uformelle samtaler om livet, nyte en god kopp sort gull, lage vafler, lytte til musikk.

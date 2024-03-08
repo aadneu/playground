@@ -17,19 +17,19 @@ const Navbar = () => {
             <NavLink className="nav-link active" aria-current="page" to="/">Hjem</NavLink> 
             
             {/* <NavLink className="nav-link" to="/om">Om</NavLink>  */}
-            <NavLink className="nav-link" to="/skriv">Gjestebok</NavLink>
+            {/* <NavLink className="nav-link" to="/skriv">Gjestebok</NavLink> */}
+            <NavLink className="nav-link" to="/guestbook">Gjestebok</NavLink>
             <NavLink className="nav-link" to="/chuck">Chuck</NavLink>
             <NavLink className="nav-link" to="/test">Test</NavLink>
 
             {/* <NavLink className="nav-link" to="/games">Spill</NavLink> */}
             {/* <NavLink className="nav-link" to="/login">Logg inn</NavLink> */}
-            <li class="nav-item dropdown">
-              <div class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li className="nav-item dropdown">
+              <div className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Spill
               </div>
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 <NavLink className="dropdown-item" to="/games/trepaarad">3 på rad</NavLink>
-            
                 <NavLink  className="dropdown-item" to="/games/Snake">Worm</NavLink>
    
               </ul>

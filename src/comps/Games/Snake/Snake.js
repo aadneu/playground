@@ -226,11 +226,11 @@ const Snake = () => {
             <h3>Apples eaten: {tummyContent.length}</h3>
             Session score: 
             <div>
-                <ul>
+                
                     {sortedScores.map((score, index) => (
-                        <li key={index}>{score}</li>
+                        <div key={index}>{score}</div>
                     ))}
-                </ul>         
+                        
             </div>               
         </div>
     </div>
