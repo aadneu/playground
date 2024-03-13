@@ -20,7 +20,8 @@ const Navbar = () => {
             {/* <NavLink className="nav-link" to="/skriv">Gjestebok</NavLink> */}
             <NavLink className="nav-link" to="/guestbook">Gjestebok</NavLink>
             <NavLink className="nav-link" to="/chuck">Chuck</NavLink>
-            <NavLink className="nav-link" to="/test">Test</NavLink>
+            {/* <NavLink className="nav-link" to="/test">Test</NavLink> */}
+            <NavLink className="nav-link" to="/spotify">SpotifyApp</NavLink>
 
             {/* <NavLink className="nav-link" to="/games">Spill</NavLink> */}
             {/* <NavLink className="nav-link" to="/login">Logg inn</NavLink> */}

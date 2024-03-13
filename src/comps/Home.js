@@ -11,6 +11,7 @@ import Testside from './Testside/Testside'
 import Login from './Log in/Login'
 import Snake from './Games/Snake/Snake'
 import Guestbook from './Guestbook/Guestbook'
+import Spotify from './SpotifyApp/Spotify'
 const Home = () => {
 
     const [editMode,setEditMode] = useState(false)
@@ -43,7 +44,8 @@ const Home = () => {
                         {...stateProps} />}/> */}
                     <Route path="/chuck" element={<ChuckNorris/>}/>
                     <Route path="/guestbook" element={<Guestbook/>}/>
-                    <Route path="/test" element={<Testside/>}/>
+                    <Route path="/spotify" element={<Spotify/>}/>
+                    {/* <Route path="/test" element={<Testside/>}/> */}
                     
                     <Route path="/games" element={<Games/>}/>
                         <Route path="/games/trepaarad" element={<Trepaarad/>}/> 
@@ -52,6 +54,7 @@ const Home = () => {
                         {...stateProps}/>}/>
                  </Routes>
             </div>
+            {/* <footer>footer</footer> */}
         </div>
    
     

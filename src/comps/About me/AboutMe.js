@@ -9,8 +9,8 @@ const AboutMe = () => {
 
   return (
     <section id="om">
-        <div className='text-center'> 
-            <h2>HVEM ER JEG?</h2>
+        <div className='text-center my-5'> 
+            <h3>HVEM ER JEG?</h3>
         </div>
 
      <div className='container-lg'>
@@ -24,9 +24,9 @@ const AboutMe = () => {
                 <p>
                     Jeg heter Ådne, og jeg er for tiden 35 år gammel. 
                     Blant mine interesser er familien min, uformelle samtaler om livet, nyte en god kopp sort gull, lage vafler, lytte til musikk.
+                </p>   
                  <p>
                 
-                </p>   
                     Jeg liker å holde meg i form gjennom regelmessige treningsøkter, tidligere var det fotball, nå er det helst styrketrening eller kampsport. Om vinteren liker jeg både langrenn og alpint. 
                     I tillegg til disse hobbyene, liker jeg også å spille spill, spesielt Rocket League og Heroes of Newerth.
                 </p>
