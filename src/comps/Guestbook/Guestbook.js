@@ -6,13 +6,12 @@ import { useState } from 'react';
 
 const Guestbook = () => {
 
- 
   const [name, setName] = useState('');
   const [text, setText] = useState('');
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState();
   
   useEffect(()=>{
-    fetch("http://localhost/playgroundserver/server.php")
+    fetch("http://localhost/playgroundserver/guestbook.php")
     .then(response => response.json())
     .then(data => setMessages(data))
     .catch(error => console.error('error fetching msgs', error))
@@ -31,7 +30,7 @@ const Guestbook = () => {
       text: text,
     };
 
-    fetch("http://localhost/playgroundserver/server.php", {
+    fetch("http://localhost/playgroundserver/guestbook.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,27 +50,46 @@ const Guestbook = () => {
    
   };
 
+  const hardCodeMessage = () => {
+    const mld = [{id: 2, text: 'Demonstrasjon av gjestebok uten database', name: 'Sjefen'},{id: 1, text: 'Lorem ipsum etc.', name: 'admin'}]
+    return (
+      mld.map((message) => (
+        <div key={message.id} className="card my-3">
+            
+            <div className="card-header">
+              #{message.id}
+            </div>
+            <div className="card-body">
+              <blockquote className="blockquote mb-0">
+                <p>{message.text}</p>
+                <footer className="blockquote-footer"><cite title="Source Title">{message.name}</cite></footer>
+              </blockquote>
+            </div>
+          </div>
+      ))
+      
+    )
+  }
+
   return (
     <div className='container text-center'>
       
       <div className="row justify-content-center text-center"> 
 
         <div className="col-md-5 py-3 mx-1 order-2 order-md-1"> 
-        {messages.map((msg) => (
-        <div key={msg.id} className="card my-3">
-          
-          <div className="card-header">
-            #{msg.id}
-          </div>
-          <div className="card-body">
-            <blockquote className="blockquote mb-0">
-              <p>{msg.text}</p>
-              <footer className="blockquote-footer"><cite title="Source Title">{msg.name}</cite></footer>
-            </blockquote>
-          </div>
-        </div>))}
-
-         
+          {messages ? messages.map((msg) => (
+          <div key={msg.id} className="card my-3">
+            
+            <div className="card-header">
+              #{msg.id}
+            </div>
+            <div className="card-body">
+              <blockquote className="blockquote mb-0">
+                <p>{msg.text}</p>
+                <footer className="blockquote-footer"><cite title="Source Title">{msg.name}</cite></footer>
+              </blockquote>
+            </div>
+          </div>)) : hardCodeMessage() }
         </div>
 
         <div className="col-md-5 my-4 py-2 mx-1 order-1 order-md-2"> 
@@ -81,8 +99,6 @@ const Guestbook = () => {
             
             <form
             className="card-text"
-            action="http://localhost/playgroundserver/server.php"
-            method="POST"
             onSubmit={(event) => handleSubmit(event)}
             >
               <div className="form-group">
@@ -96,12 +112,9 @@ const Guestbook = () => {
               <button type="submit" className="btn btn-success my-3">Send inn</button>
             </form>
 
-            
-            
           </div>
         </div>
 
-          
         </div>
 
       </div>

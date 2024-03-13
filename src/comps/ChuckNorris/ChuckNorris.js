@@ -29,7 +29,7 @@ const ChuckNorris = () => {
             <div className="text-center"> 
                 <h3>Chuck Norris vits:</h3>
                 <p>{ chuckFact }</p>
-                <button onClick={handleNewJokeClick} type="button" class="btn btn-success btn-sm my-1">Lag ny</button>       
+                <button onClick={handleNewJokeClick} type="button" className="btn btn-success btn-sm my-1">Lag ny</button>       
 
             </div>
             
