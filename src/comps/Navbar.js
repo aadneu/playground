@@ -8,7 +8,7 @@ const Navbar = () => {
     
     <nav className="navbar navbar-expand-md bg-body-tertiary mb-4" >
       <div className="container ">
-        <a href="">TEst</a>
+        <a href=""></a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -19,8 +19,7 @@ const Navbar = () => {
       
             <NavLink className="nav-link" to="/guestbook">Gjestebok</NavLink>
             <NavLink className="nav-link" to="/chuck">Chuck</NavLink>
-            <NavLink className="nav-link" to="/newhome">NewHome</NavLink>
-         
+          
             <li className="nav-item dropdown">
               <div className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Spill

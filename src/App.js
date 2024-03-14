@@ -18,13 +18,14 @@ import Home from './comps/Home'
 
 
 
+
 function App() {
   return (
 
   <div>
     <Router>
        <Home/> 
-      
+    
     </Router>
   </div>
 
