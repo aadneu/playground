@@ -8,6 +8,7 @@ import Trepaarad from './Games/Trepaarad/Trepaarad'
 
 import Snake from './Games/Snake/Snake'
 import Guestbook from './Guestbook/Guestbook'
+import NewHome from './NewHome/NewHome'
 
 const Home = () => {
 
@@ -21,12 +22,10 @@ const Home = () => {
             <div className='content'>
                 <Routes>
                     <Route path="/" element={<Main/>}/>
-                 
                     <Route path="/chuck" element={<ChuckNorris/>}/>
                     <Route path="/guestbook" element={<Guestbook/>}/>
-                    
-                 
-                    
+                    <Route path="/newhome" element={<NewHome/>}/>
+                   
                     <Route path="/games" element={<Games/>}/>
                         <Route path="/games/trepaarad" element={<Trepaarad/>}/> 
                         <Route path="/games/Snake" element={<Snake/>}/> 
